@@ -1,0 +1,57 @@
+{
+    "baseUrl": "http://localhost/sdg-indicators",
+    "pages": [
+        {
+            "name": "Home",
+            "path": "/"
+        },
+        {
+            "name": "Reporting status",
+            "path": "/reporting-status"
+        },
+        {
+            "name": "Publications",
+            "path": "/publications"
+        },
+        {
+            "name": "FAQ",
+            "path": "/faq"
+        },
+        {
+            "name": "Updates",
+            "path": "/updates"
+        },
+        {
+            "name": "Goal",
+            "path": "/1"
+        },
+        {
+            "name": "Indicator 1.1.1: Indicator without disaggregations (ie. only headline data)",
+            "path": "/1-1-1"
+        },
+        {
+            "name": "Indicator 3.4.2: Longer catch-all section which includes bullets",
+            "path": "/3-4-2"
+        },
+        {
+            "name": "Indicator 3.a.1: Map / indicator without disaggregations",
+            "path": "/3-a-1"
+        },
+        {
+            "name": "Indicator 5.1.1: Bar chart",
+            "path": "/5-1-1"
+        },
+        {
+            "name": "Indicator 9.1.2: Unit toggle",
+            "path": "/9-1-2"
+        },
+        {
+            "name": "Indicator 13.3.1: Non-statistical indicator",
+            "path": "/13-3-1"
+        },
+        {
+            "name": "Indicator 17.13.1: Full embed",
+            "path": "/17-13-1"
+        }
+    ]
+}
