@@ -1,39 +1,24 @@
-const pa11y = require('pa11y');
-const fs = require("fs")
-const pages = require("./pages.json")
+const ReportService = require("./ReportService")
 const configurations = require("./configurations.json")
+const pages = require("./pages.json")
+const fs = require("fs")
 
-async function getReport(){
-    if(fs.existsSync(".output/report.md")) fs.unlinkSync(".output/report.md")
+var reportService = new ReportService()
 
-    var report = ""
-    report = report.concat("# Accessibility report")
-    report = report.concat("\n")
+console.log("Generating report...");
 
-    for(var pageIndex = 0 ; pageIndex < pages.pages.length ; pageIndex++){
-        var page = pages.pages[pageIndex]
-        var result = await pa11y(`${pages.baseUrl}${page.path}`, configurations.mobile)
-        report = report.concat(`## ${page.name}`)
-        report = report.concat("\n")
-        report = report.concat(`**${result.issues.length} issues**`)
-        report = report.concat("\n")
-
-        for(var issueIndex = 0 ; issueIndex < result.issues.length ; issueIndex++){
-            var issue = result.issues[issueIndex]
-
-            report = report.concat(`### ${issue.message}`);
-            report = report.concat("\n")
-            report = report.concat(`\`${issue.selector}\``);
-            report = report.concat("\n")
-            report = report.concat("```html");
-            report = report.concat("\n")
-            report = report.concat(issue.context)
-            report = report.concat("\n")
-            report = report.concat("```");
-            report = report.concat("\n")
-        }
+if (!fs.existsSync(".output")) {
+    fs.mkdirSync(".output")
+}
+else {
+    if (fs.existsSync(".output/report.json")){
+        fs.unlinkSync(".output/report.json")
     }
-    fs.writeFileSync(".output/report.md", report)
 }
 
-getReport()
+reportService.getReports(pages.baseUrl, pages.pages, configurations)
+    .then((r) => {
+        console.log("Report completed! Results at .output/report.json");
+        
+        fs.writeFileSync(".output/report.json", JSON.stringify(r))
+    })

@@ -1,4 +1,5 @@
 {
+    "desktop": {},
     "highContrast": {
         "actions": [
             "click element .navbar ul.navbar-nav li.contrast-high a"
