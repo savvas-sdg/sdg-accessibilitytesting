@@ -78,7 +78,7 @@ To run all the tests, run `npm start` or `yarn start` at the root directory of t
 
 ### 4. See reports
 
-To see the reports, open `.output/index.html` in your browser. You should the list of all the pages you've run tests against:
+To see the reports, open `.output/index.html` in your browser. You should see the list of all the pages you've run tests against:
 
 ![List of pages on the homepage](https://imgur.com/MoOTcRM.png)
 
