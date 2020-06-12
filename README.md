@@ -4,7 +4,7 @@
 
 ### 1. Setup
 
-To setup `sdg-accessibility testing`, clone this repository and install all dependencies:
+To setup accessibility testing, clone this repository and install all dependencies:
 
 ```bash
 git clone https://github.com/savvas-sdg/sdg-accessibilitytesting.git
