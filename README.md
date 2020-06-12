@@ -74,6 +74,14 @@ This is the file where you'll add any configurations. For example, change to a m
 
 ### 3. Run tests
 
-To run all the tests, run `npm start` or `yarn start` at the root directory of the project. 
+To run all the tests, run `npm start` or `yarn start` at the root directory of the project. It might take a few seconds for the reports to be generated.
 
 ### 4. See reports
+
+To see the reports, open `.output/index.html` in your browser. You should the list of all the pages you've run tests against:
+
+![List of pages on the homepage](https://imgur.com/MoOTcRM.png)
+
+Clicking on a link takes to the full test report for that page:
+
+![Page report](https://imgur.com/YXqiJPQ.png)
