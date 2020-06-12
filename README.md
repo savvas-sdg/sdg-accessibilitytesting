@@ -2,6 +2,13 @@
 
 ## How to use
 
+### Prerequisites
+
+You need these installed before proceeding:
+
+* Git
+* Node JS
+
 ### 1. Setup
 
 To setup accessibility testing, clone this repository and install all dependencies:
