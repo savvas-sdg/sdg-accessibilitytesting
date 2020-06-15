@@ -10,6 +10,15 @@ var htmlService = new HtmlService()
 
 console.log("Generating report...");
 
+if(!fs.existsSync(".output")){
+    fs.mkdirSync(".output")
+}
+
+fs.readdirSync(".output")
+    .forEach((file) => {
+        fs.unlinkSync(`.output/${file}`)
+    })
+
 reportService.getReports(pages.baseUrl, pages.pages, configurations)
     .then((r) => {
         r.forEach((report) => {
